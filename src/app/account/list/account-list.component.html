@@ -1,0 +1,33 @@
+<br>
+<h1> Account List </h1>
+<hr>
+<br>
+&nbsp; &nbsp;<button type="button" routerLink="/create-form" class="btn btn-lg btn-primary">Insert</button>
+<br><br>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <th>Account Number</th>
+      <th>Open Date</th>
+      <th>Balance</th>
+      <th>Customer Number</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let acc of listAccount">
+        <td><a (click)="selectAccount(acc);"><u>{{acc.accountNumber}}</u></a></td>
+        <td>{{acc.openDate}}</td>
+        <td>{{acc.balance | api}}</td>
+        <td>{{acc.customer ? acc.customer.firstName : " "}}</td>
+        <td><button type="button" (click) = "delete(acc.accountNumber)" class="btn btn-danger">Delete</button>
+          &nbsp; <button type="button" (click) = "view_transaction(acc)" class="btn btn-success">View Transaction</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <app-account-form #formAccount *ngIf="showDetail" [account]="selectedAccount" (result)="prosesResult($event)" ></app-account-form>
+</div>
+
+<!-- [selectedCustomer] = "selectedCustomer" -->
