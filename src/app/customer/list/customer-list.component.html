@@ -17,16 +17,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let cust of listCustomer">
-        <td><a (click)="selectCustomer(cust);"><u>{{cust.customerNumber}}</u></a></td>
-        <td>{{cust.firstName}}</td>
-        <td>{{cust.lastName}}</td>
-        <td>{{cust.birthDate}}</td>
+        <td><a (click)="selectCustomer(cust);"><u>{{cust.customernumber}}</u></a></td>
+        <td>{{cust.firstname}}</td>
+        <td>{{cust.lastname}}</td>
+        <td>{{cust.birthdate}}</td>
         <td>{{cust.username}}</td>
         <td>{{cust.password}}</td>
-        <td>{{cust.phoneNumber}}</td>
-        <td>{{cust.phoneType}}</td>
-        <td><button type="button" (click) = "delete(cust.customerNumber)" class="btn btn-danger">Delete</button>
-        &nbsp; <button type="button" (click) = "view_account(cust)" class="btn btn-success">View Account</button></td>
+        <td>{{cust.phonenumber}}</td>
+        <td>{{cust.phonetype}}</td>
+        <td><button type="button" (click) = "delete(cust.customernumber)" class="btn btn-danger">Delete</button>
+        <!-- &nbsp; <button type="button" (click) = "view_account(cust)" class="btn btn-success">View Account</button> -->
+      </td>
       </tr>
     </tbody>
   </table>

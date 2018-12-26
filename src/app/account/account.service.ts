@@ -9,24 +9,24 @@ export class AccountService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getList(customerNumber? ){
+  getList(customernumber? ){
     let params: string = "" ;
-    if (customerNumber){
-      params = "?customer="+customerNumber;
+    if (customernumber){
+      params = "?customer="+customernumber;
     }
-    return this.httpClient.get('http://localhost:8081/account/list'+ params);
+    return this.httpClient.get('http://localhost:3000/accounts'+ params);
   }
 
   update(account: Account){
-    return this.httpClient.put('http://localhost:8081/account/accountput', account);
+    return this.httpClient.put('http://localhost:3000/account', account);
   }
 
   insert(account: Account){
-    return this.httpClient.post('http://localhost:8081/account/accountpost', account);
+    return this.httpClient.post('http://localhost:3000/account', account);
   }
 
   delete(account){
-    return this.httpClient.delete('http://localhost:8081/account/accountdelete/'+ account);
+    return this.httpClient.delete('http://localhost:3000/account/'+ account);
   }
 }
  

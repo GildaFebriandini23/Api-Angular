@@ -10,18 +10,18 @@ export class CustomerService {
   constructor(private httpClient:HttpClient) { }
 
   getList(){
-    return this.httpClient.get('http://localhost:8081/customer/Customer');
+    return this.httpClient.get('http://localhost:3000/customers');
   }
 
   update(customer: Customer){
-    return this.httpClient.put('http://localhost:8081/customer/custput', customer);
+    return this.httpClient.put('http://localhost:3000/customer', customer);
   }
 
   insert(customer: Customer){
-    return this.httpClient.post('http://localhost:8081/customer/cspost', customer);
+    return this.httpClient.post('http://localhost:3000/customer', customer);
   }
 
   delete(customer){
-    return this.httpClient.delete('http://localhost:8081/customer/custdelete/'+ customer);
+    return this.httpClient.delete('http://localhost:3000/customer/'+customer);
   }
 }

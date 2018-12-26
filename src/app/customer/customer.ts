@@ -1,10 +1,10 @@
 export class Customer{
-    customerNumber: number;
-    firstName: string;
-    lastName: string;
-    birthDate: Date;
+    customernumber: number;
+    firstname: string;
+    lastname: string;
+    birthdate: Date;
     username: string;
     password: string;
-    phoneNumber: string;
-    phoneType: string;
+    phonenumber: string;
+    phonetype: string;
 }

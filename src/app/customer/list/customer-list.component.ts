@@ -26,14 +26,14 @@ export class CustomerListComponent implements OnInit {
 
   selectCustomer(customer: Customer){
     let copyCustomer = new Customer(); //let hanya berlaku di satu blok, car adalah variabel global
-    copyCustomer.customerNumber = customer.customerNumber;
-    copyCustomer.firstName = customer.firstName;
-    copyCustomer.lastName = customer.lastName;
-    copyCustomer.birthDate = customer.birthDate;
+    copyCustomer.customernumber = customer.customernumber;
+    copyCustomer.firstname = customer.firstname;
+    copyCustomer.lastname = customer.lastname;
+    copyCustomer.birthdate = customer.birthdate;
     copyCustomer.username = customer.username;
     copyCustomer.password = customer.password;
-    copyCustomer.phoneNumber = customer.phoneNumber;
-    copyCustomer.phoneType = customer.phoneType;
+    copyCustomer.phonenumber = customer.phonenumber;
+    copyCustomer.phonetype = customer.phonetype;
     this.selectedCustomer = copyCustomer;
     this.showDetail = true;
     this.formCustomer.updateData();
@@ -51,9 +51,9 @@ export class CustomerListComponent implements OnInit {
     );
   }
 
-  delete(customerNumber){
+  delete(customernumber){
     // alert(customerNumber);
-    this.customerService.delete(customerNumber).subscribe(
+    this.customerService.delete(customernumber).subscribe(
       (response)=>{
         // console.log(JSON.stringify(response));
         location.href = '/customer-list';
@@ -64,7 +64,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   view_account(customer: Customer){
-    this.router.navigate(['/account-list',{customerNumber:customer.customerNumber }]);
+    this.router.navigate(['/account-list',{customernumber:customer.customernumber }]);
   }
 
   prosesResult(result){

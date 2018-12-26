@@ -23,8 +23,8 @@ export class AccountListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       params=> {
-        let customerNumber = params['customerNumber'];
-        this.loadData(customerNumber);
+        let customernumber = params['customernumber'];
+        this.loadData(customernumber);
       }
     );
   }
@@ -41,8 +41,8 @@ export class AccountListComponent implements OnInit {
   }
 
   
-  loadData(customerNumber?){
-    this.accountService.getList(customerNumber).subscribe(
+  loadData(customernumber?){
+    this.accountService.getList(customernumber).subscribe(
       (response)=>{
         console.log(JSON.stringify(response));
         Object.assign(this.listAccount, response);
@@ -52,9 +52,9 @@ export class AccountListComponent implements OnInit {
     );
   }
 
-  delete(accountNumber){
+  delete(accountnumber){
     // alert(customerNumber);
-    this.accountService.delete(accountNumber).subscribe(
+    this.accountService.delete(accountnumber).subscribe(
       (response)=>{
         // console.log(JSON.stringify(response));
         location.href = '/account-list';
@@ -67,8 +67,6 @@ export class AccountListComponent implements OnInit {
   view_transaction(account: Account){
     this.router.navigate(['/transaction-list',{accountNumber:account.accountNumber }]);
   }
-
-
 
   prosesResult(result){
     if(result){

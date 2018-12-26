@@ -36,7 +36,7 @@ export class CreateAccountComponent implements OnInit {
     account.balance = this.accForm.controls['balance'].value;
 
     let customer = new Customer();
-    customer.customerNumber = this.accForm.controls['customer'].value;
+    customer.customernumber = this.accForm.controls['customer'].value;
     account.customer = customer;
 
     this.data.insert(account).subscribe(
@@ -51,8 +51,8 @@ export class CreateAccountComponent implements OnInit {
   }
 
   setSelectedCustomer(customer : Customer){
-    this.accForm.controls['customer'].setValue(customer.customerNumber);
-    alert(customer.customerNumber);
+    this.accForm.controls['customer'].setValue(customer.customernumber);
+    alert(customer.customernumber);
 
     this.accForm.updateValueAndValidity();
   }

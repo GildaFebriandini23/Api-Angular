@@ -38,7 +38,7 @@ export class AccountFormComponent implements OnInit {
     account.balance = this.accountFormGroup.controls['balance'].value;
 
     let customer = new Customer();
-    customer.customerNumber = this.accountFormGroup.controls['customer'].value;
+    customer.customernumber = this.accountFormGroup.controls['customer'].value;
     account.customer = customer;
     
     this.accountService.update(account).subscribe(
@@ -61,7 +61,7 @@ export class AccountFormComponent implements OnInit {
       this.accountFormGroup.controls['accountNumber'].setValue(this.account.accountNumber);
       this.accountFormGroup.controls['openDate'].setValue(this.account.openDate);
       this.accountFormGroup.controls['balance'].setValue(this.account.balance);
-      this.accountFormGroup.controls['customer'].setValue(this.account.customer.customerNumber);
+      this.accountFormGroup.controls['customer'].setValue(this.account.customer.customernumber);
      
     }
   }
@@ -73,7 +73,7 @@ export class AccountFormComponent implements OnInit {
     account.balance = this.accountFormGroup.controls['balance'].value;
 
     let customer = new Customer();
-    customer.customerNumber = this.accountFormGroup.controls['customer'].value;
+    customer.customernumber = this.accountFormGroup.controls['customer'].value;
     account.customer = customer;
 
     this.accountService.insert(account).subscribe(
@@ -89,7 +89,7 @@ export class AccountFormComponent implements OnInit {
 
   setSelectedCustomer(customer: Customer){
     // this.selectedCustomer = customer;
-    this.accountFormGroup.controls['customer'].setValue(customer.customerNumber);
+    this.accountFormGroup.controls['customer'].setValue(customer.customernumber);
     this.accountFormGroup.updateValueAndValidity();
   }
 

@@ -14,19 +14,19 @@ export class TransactionService {
     if(accountNumber){
       params = "?account="+accountNumber;
     }
-    return this.httpClient.get('http://localhost:8081/transaction/list' + params);
+    return this.httpClient.get('http://localhost:3000/transactions' + params);
   }
 
   update(transaction: Transaction){
-    return this.httpClient.put('http://localhost:8081/transaction/trxput', transaction);
+    return this.httpClient.put('http://localhost:3000/transaction', transaction);
   }
 
   insert(transaction: Transaction){
-    return this.httpClient.post('http://localhost:8081/transaction/trxpost', transaction);
+    return this.httpClient.post('http://localhost:3000/transaction', transaction);
   }
 
   delete(transaction){
-    return this.httpClient.delete('http://localhost:8081/transaction/trxdelete/'+ transaction);
+    return this.httpClient.delete('http://localhost:3000/transaction/'+ transaction);
   }
 } 
  
